@@ -19,6 +19,6 @@ devtools::check() # Operating system test
 
 remove.packages("ashgswuw")
 # install.packages(getwd(), repos = NULL, type = "source")
-# devtools::install_github("...")
+# devtools::install_github("mattjbayly/ashgswuw")
 
 library(ashgswuw)

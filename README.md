@@ -8,7 +8,8 @@
 > McParland, Eaton and Rosenfeld (2016). Only the hydraulic-geometry and habitat
 > (WUA) components were adapted; the UBC Regime Model, sediment-transport and
 > plotting code were not. Several deliberate corrections were made during the
-> adaptation (see *Differences from the original MATLAB code* below), so results
+> adaptation (corrected geometry, resistance ratio, lognormal parameters and
+> exact section clipping), so results
 > from this package are **not** an exact reproduction of the original MATLAB
 > output. Full credit for the method and the original code belongs to Daniel
 > McParland, Brett Eaton and Jordan Rosenfeld. **They have not seen, reviewed
@@ -166,37 +167,6 @@ Any invalid or out-of-domain input returns `NULL` with a message: non-positive
 inputs (including zero discharge), gradient >= 1, shape parameter outside
 `0 < b < 1`, discharge above the modelled bankfull discharge, or an unusable
 HSI table. `wuw_curve()` keeps such discharges as rows with a `status` label.
-
-## Differences from the original MATLAB code
-
-The original scripts `ASHGS_WUA.m`, `FindU.m` and `Preference.m` in the
-`Habitat values` folder of Dr. Brett Eaton's UBCRM-ASHGS tools
-(<https://blogs.ubc.ca/beaton/working-code/>, GPL-3) were audited before
-translation. The logic was adapted, not ported line by line, and the following
-were changed deliberately:
-
-| Archived behaviour | This package |
-|---|---|
-| `dmax = (1+b)/(1-b)·db` (bankfull area inflated by 1 + b/2) | `dmax = db/(1−b)`; area = Wb·db |
-| Resistance denominator `R^(5/3)` | `(R/D84)^(5/3)` as published |
-| 0.0001·Wb grid; dry cells counted in width; section closed over last 1 % | Exact segment clipping, vertical closing bank |
-| `lognpdf(x, 0, 1.09)` log-scale parameters | Arithmetic mean 1 / SD 1.09, 1.19 converted to meanlog, sdlog |
-| Velocity mixture built from depth variables | Separate velocity mixture |
-| Density at bin centre as probability; matrix `sum/sum` | CDF differences; explicit scalar sums |
-| `interp1` gives NaN outside the curve | Held flat beyond range |
-| 61 bins over relative 0-3 | 50 bins over 0-5 (paper), user-settable |
-
-Sediment transport, UBCRM and all plotting/UI code are omitted, but available in original Matlab code.
-
-## Verification
-
-`tests/testthat` checks: bankfull area = Wb·db for several b; Harris Creek
-check values (b = 0.20369, dmax = 0.8853 m, A = 10.1238 m², P = 15.3305 m,
-v = 1.8586 m/s, Qbf = 18.8157 m³/s); solver residuals; probabilities sum to 1;
-all-ones HSI gives WUW = wetted width; WUA scales with length; convergence
-with 400 bins; NULL-and-message behaviour for every documented failure.
-
-These are equation and implementation checks, not field validation.
 
 ## References
 

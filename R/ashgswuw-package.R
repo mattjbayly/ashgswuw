@@ -6,7 +6,8 @@
 #' UBCRM-ASHGS tools at <https://blogs.ubc.ca/beaton/working-code/>. The
 #' method is described in McParland, Eaton and Rosenfeld (2016). Only the
 #' hydraulic-geometry and habitat components were adapted, with deliberate
-#' corrections listed in the README, so results are not an exact reproduction
+#' corrections to the geometry, resistance and distribution parameters, so
+#' results are not an exact reproduction
 #' of the original MATLAB output. Full credit for the method and original code
 #' belongs to McParland, Eaton and Rosenfeld; they have not reviewed or
 #' endorsed this package, and any errors in the adaptation are the package

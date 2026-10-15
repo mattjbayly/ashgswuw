@@ -1,5 +1,7 @@
 # ashgswuw
 
+**Live app:** <https://01a13ddc-b79e-2928-4786-df71a8d13b5f.share.connect.posit.cloud/>
+
 > **Attribution.** This package is an R adaptation of *selected functions* from
 > the **At-a-Station Hydraulic Geometry Simulator (ASHGS)**, originally written
 > in MATLAB by **Dr. Brett Eaton** (Department of Geography, University of
@@ -106,6 +108,11 @@ wuw_curve(discharge_m3s = c(0.25, 0.5, 1, 2, 5, 10, 25),
 ```
 
 ### Interactive app
+
+A hosted copy runs on Posit Connect Cloud, no R installation needed:
+<https://01a13ddc-b79e-2928-4786-df71a8d13b5f.share.connect.posit.cloud/>
+
+To run it locally:
 
 ```r
 install.packages("shiny")   # once

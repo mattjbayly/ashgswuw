@@ -1,0 +1,30 @@
+Package: ashgswuw
+Title: Weighted Usable Width from Reach-Average Channel Geometry (ASHGS Direct-Geometry Pathway)
+Version: 0.1.0
+Authors@R:
+    person("M. J.", "Bayly", email = "mjbayly@mjbayly.com", role = c("aut", "cre"))
+Description: An independent R adaptation of selected functions from the
+    At-a-Station Hydraulic Geometry Simulator (ASHGS). The original ASHGS was
+    written in MATLAB by Dr. Brett Eaton (University of British Columbia) and
+    is distributed under GPL-3 at <https://blogs.ubc.ca/beaton/working-code/>;
+    the method was developed and published by Daniel McParland, Brett Eaton
+    and Jordan Rosenfeld (2016) <doi:10.1002/rra.2851>. Credit for the
+    method and the original code belongs to them. They have not reviewed or
+    endorsed this package, and any errors in the adaptation are the package
+    author's alone. Estimates weighted usable width (WUW, m) and, optionally,
+    weighted usable area (WUA, m2) of fish habitat at a given discharge from
+    reach-average bankfull width, mean bankfull depth, reach gradient, D84 and
+    user-supplied depth and velocity habitat suitability curves. Only the
+    hydraulic-geometry and habitat components were adapted, with the
+    corrections documented in the package README; sediment transport, the UBC
+    Regime Model and all plotting from the original tools are omitted. Channel
+    geometry is assumed fixed.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: R (>= 4.1)
+Imports: stats, utils
+Suggests: shiny (>= 1.9.0), testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://blogs.ubc.ca/beaton/working-code/

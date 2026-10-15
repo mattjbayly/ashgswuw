@@ -1,0 +1,28 @@
+# R session and history
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+*.Rapp.history
+
+# devtools / R CMD check / build output
+*.Rcheck/
+*.tar.gz
+/doc/
+/Meta/
+docs/
+inst/doc/
+src/*.o
+src/*.so
+src/*.dll
+
+# Vignette and knitr caches
+*_cache/
+*.knit.md
+*.utf8.md
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
